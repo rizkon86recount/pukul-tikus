@@ -1,0 +1,78 @@
+@media screen and (max-width: 640px) {
+  /* title */
+  h1 {
+    font-size: 40px;
+    text-align: center;
+    font-family: monospace;
+  }
+  h2 {
+    text-align: center;
+    font-size: 50px;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    font-variant-numeric: normal;
+  }
+
+  .mulai {
+    border-block-color: red;
+    writing-mode: horizontal-tb;
+    padding: 10px;
+    background-color: aqua;
+  }
+
+  .mulai:hover {
+    background-color: red;
+    color: white;
+  }
+
+  button {
+    display: block;
+    margin: auto;
+    font-size: 15px;
+  }
+
+  .container {
+    width: auto;
+    margin: 70px;
+    border-radius: 5px;
+    cursor: url(../img/m.png), auto;
+  }
+
+  .container:active {
+    cursor: url(../img/n.png), auto;
+  }
+
+  .tanah {
+    width: 100px;
+    height: 60px;
+    position: relative;
+    overflow: hidden;
+    float: left;
+    left: 30px;
+  }
+
+  .tanah::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 60px;
+    background: url(../img/tanah.png) bottom center no-repeat;
+    background-size: 120%;
+    position: absolute;
+    bottom: -5px;
+  }
+
+  .tikus {
+    width: 50px;
+    height: 60px;
+    background: url(../img/tikus.png) bottom center no-repeat;
+    background-size: 100%;
+    position: absolute;
+    transition: 0.4s;
+    right: 50px;
+  }
+
+  .tanah.muncul .tikus {
+    top: 0;
+  }
+}
