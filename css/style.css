@@ -1,25 +1,47 @@
-h1,
-h2 {
-  margin-top: 20px;
+body {
+  background-color: aqua;
+}
+h1 {
   font-size: 60px;
   text-align: center;
-  font-family: arial;
-  margin: 10px;
+  font-family: monospace;
+}
+h2 {
+  text-align: center;
+  font-size: 70px;
+  margin-top: 25px;
+  margin-bottom: -40px;
+  font-variant-numeric: normal;
+}
+
+.mulai {
+  border-block-color: red;
+  writing-mode: horizontal-tb;
+  padding: 10px;
+  background-color: aqua;
+}
+
+.mulai:hover {
+  background-color: red;
+  color: white;
 }
 
 button {
   display: block;
   margin: auto;
+  font-size: 20px;
+  margin-top: 20px;
 }
 
 .container {
   width: 700px;
   margin: auto;
-  cursor: url(../img/lll.png), auto;
+  border-radius: 20px;
+  cursor: url(../img/90.png), auto;
 }
 
 .container:active {
-  cursor: url(../img/kkk.png), auto;
+  cursor: url(../img/palu90.png), auto;
 }
 
 .tanah {
