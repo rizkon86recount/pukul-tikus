@@ -5,6 +5,12 @@ const papanSkor = document.querySelector(".papanSkor");
 let tanahSebelumnya;
 let selesai;
 let skor;
+let level = 1;
+const waktuMuncul = {
+  1: { min: 2500, max: 3000 }, // Level 1
+  2: { min: 1500, max: 2500 }, // Level 2
+  3: { min: 900, max: 1400 }, // Level 3
+};
 
 function randomTanah(tanah) {
   const t = Math.floor(Math.random() * tanah.length);
@@ -23,7 +29,8 @@ function randomWaktu(min, max) {
 
 function munculTikus() {
   const tRandom = randomTanah(tanah);
-  const wRandom = randomWaktu(1000, 1000);
+  const { min, max } = waktuMuncul[level]; // Mengambil waktu muncul sesuai level
+  const wRandom = randomWaktu(min, max);
   tRandom.classList.add("muncul");
 
   setTimeout(() => {
@@ -41,6 +48,7 @@ function mulai() {
   munculTikus();
   setTimeout(() => {
     selesai = true;
+    naikLevel(); // Panggil fungsi naikLevel() setelah waktu selesai
   }, 10000);
 }
 
@@ -48,6 +56,15 @@ function pukul() {
   skor++;
   this.parentNode.classList.remove("muncul");
   papanSkor.textContent = skor;
+}
+
+function naikLevel() {
+  if (level < Object.keys(waktuMuncul).length) {
+    level++;
+    alert("Selamat! Naik ke Level " + level);
+  } else {
+    alert("Anda telah menyelesaikan semua level!");
+  }
 }
 
 tikus.forEach((t) => {
